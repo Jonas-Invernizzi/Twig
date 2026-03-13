@@ -1,5 +1,10 @@
 <?php
 
-require('carregar_twig.php');
+require_once('carregar_twig.php');
 
-echo $twig->render('teste_twig.html');
+$nome = 'fulaninho';
+
+echo $twig->render('teste_twig.html',[
+    'nome'=>$nome,
+    'legal'=>true,
+]);

@@ -6,8 +6,15 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Odeio</h1>
+    <h1>Bom dia</h1>
     <hr>
-    <p>Pre</p>
+    <p>Olá {{ nome }}. Corta c. </p>
+    <p>
+        {%if (legal)%}
+        você é um cara legal
+        {%else%}
+        você não é um cara legal
+        {%endif%}
+    </p>
 </body>
 </html>
