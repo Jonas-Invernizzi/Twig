@@ -1,4 +1,5 @@
 <?php
 
 require('carregar_twig.php');
-echo'oi';
+
+echo $twig->render('teste_twig.html');
