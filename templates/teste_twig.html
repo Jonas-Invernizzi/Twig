@@ -8,7 +8,7 @@
 <body>
     <h1>Bom dia</h1>
     <hr>
-    <p>Olá {{ nome }}. Você tem cabelo?</p>
+    <p>Olá {{ nome|upper }}. Você tem cabelo?</p>
     <p>
         {% if legal %}
             Saci você vai me liberar da floresta?
@@ -22,6 +22,7 @@
             <li>{{ disc }}</li>
             {% endfor %}
         </ul>
+        {{poema|nl2br}}
     </p>
 </body>
 </html>
