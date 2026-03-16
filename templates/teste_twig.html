@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=9-5, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 <body>
@@ -10,11 +10,11 @@
     <hr>
     <p>Olá {{ nome }}. Corta c. </p>
     <p>
-        {%if (legal)%}
-        você é um cara legal
-        {%else%}
-        você não é um cara legal
-        {%endif%}
+        {% if legal %}
+            você é um cara legal
+        {% else %}
+            você não é um cara legal
+        {% endif %}
     </p>
 </body>
 </html>
