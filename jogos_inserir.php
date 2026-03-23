@@ -17,10 +17,11 @@ if ((!$nome || !$estilo)) {
     move_uploaded_file($_FILES['capa']['tmp_name'], "img/{$capa}");
 
     require("carregar_pdo.php");
-    $dados = $pdo->prepare('INSERT INTO jogos (nome, estilo) VALUES (?,?)');
+    $dados = $pdo->prepare('INSERT INTO jogos (nome, estilo, capa) VALUES (?,?, ?)');
     $dados->bindParam(1, $nome);
     $dados->bindParam(2, $estilo);
-    
+    $dados->bindParam(3, $capa);
+
     $dados->execute();
 
     header('location:jogos.php');
