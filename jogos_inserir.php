@@ -13,7 +13,8 @@ if ((!$nome || !$estilo)) {
     }
 } else {
     $ext = pathinfo($_FILES["capa"]["name"], PATHINFO_EXTENSION);
-    $capa = uniqid().'.';
+    $capa = uniqid().'.'.$ext;
+    move_uploaded_file($_FILES['capa']['tmp_name'], "img/{$capa}");
 
     require("carregar_pdo.php");
     $dados = $pdo->prepare('INSERT INTO jogos (nome, estilo) VALUES (?,?)');
