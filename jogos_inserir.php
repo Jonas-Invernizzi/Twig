@@ -13,7 +13,7 @@ if ((!$nome || !$estilo)) {
     }
 } else {
     $ext = pathinfo($_FILES["capa"]["name"], PATHINFO_EXTENSION);
-    $capa = uniqid().'.'.$ext;
+    $capa = uniqid().'.'.$ext; 
     move_uploaded_file($_FILES['capa']['tmp_name'], "img/{$capa}");
 
     require("carregar_pdo.php");

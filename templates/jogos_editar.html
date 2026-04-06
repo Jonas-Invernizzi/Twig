@@ -3,6 +3,7 @@
 <hr>
 <br>
 <form action="jogos_editar.php" method="post" enctype="multipart/form-data">
+  <input type="hidden" name="id" value=" {{ jogo.id }}">
   <input type="text" name="nome" placeholder="Nome" value = "{{ jogo.nome }}"/>
 
 
@@ -14,6 +15,7 @@
   <br>
   Capa: <input type="file" name="capa">
   <br>
+  
   <input type="submit" value="Gravar">
 </form>
 {% endblock %}
