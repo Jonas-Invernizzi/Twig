@@ -2,6 +2,14 @@
 'tiro': "Tiro", 'rpg': "RPG", }%}
 
 <h3>Lista de Jogos</h3>
+<hr>
+Hoje: {{ datas.data }}
+<br>
+A Próxima Sexta: {{datas.proximaSexta}}
+<br>
+Daqui a 20 dias será: {{ datas.dataVinteDias }}
+<hr>
+
 <a href="jogos_inserir.php">➕ Novo Jogo</a>
 <br /><br />
 <table border="1" style="border-collapse: collapse; border-color: aquamarine">
@@ -9,7 +17,7 @@
     <th>Nome</th>
     <th>Estilo</th>
     <th>Capa</th>
-    <th>Data de Lançamento</th>
+    <th>Data de lancamento</th>
     <th>Editar</th>
     <th>Excluir</th>
   </tr>
@@ -18,7 +26,7 @@
     <td>{{jogo.nome }}</td>
     <td>{{estilos[jogo.estilo] ?? "Não Encontrado"}}</td>
     <td><img src="img/{{ jogo.capa }}" /></td>
-    <td>{{  jogo.lançamento }}</td>
+    <td>{{  jogo.lancamento }}</td>
     <td><a href="jogos_editar.php?id={{ jogo.id }}">🧻</a></td>
     <td><a href="jogos_excluir.php?id={{ jogo.id }}">💩</a></td>
     </tr>

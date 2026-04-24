@@ -6,7 +6,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $id = (int) $_POST['id'] ?? false;
     $nome =  $_POST['nome'] ?? false;
     $estilo = $_POST['estilo'] ?? false;
-    $lancamento = $_POST['lançamento'] ?? false;
+    $lancamento = $_POST['lancamento'] ?? false;
 
     if (!$_FILES['capa']['error']) {
         $dados = $pdo->prepare('select capa from jogos where id = :id');
@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $dados->execute([':id' => $id, ':capa' => $capa]);
     }
     
-    $sql = 'UPDATE jogos set nome = :nome, estilo = :estilo, lançamento = :lancamento'.(isset($capa) ? ', capa = :capa' : '').' where id = :id';
+    $sql = 'UPDATE jogos set nome = :nome, estilo = :estilo, lancamento = :lancamento'.(isset($capa) ? ', capa = :capa' : '').' where id = :id';
 
     $dados = $pdo->prepare($sql);
     $params = [

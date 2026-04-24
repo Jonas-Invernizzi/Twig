@@ -5,7 +5,7 @@ $nome = false;
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nome = $_POST['nome'] ?? false;
     $estilo = $_POST['estilo'] ?? false;
-    $lancamento = $_POST['lançamento'] ?? false;
+    $lancamento = $_POST['lancamento'] ?? false;
 }
 if ((!$nome || !$estilo  || !$lancamento)) {
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -17,7 +17,7 @@ if ((!$nome || !$estilo  || !$lancamento)) {
     move_uploaded_file($_FILES['capa']['tmp_name'], "img/{$capa}");
 
     require("carregar_pdo.php");
-    $dados = $pdo->prepare('INSERT INTO jogos (nome, estilo, capa, lançamento) VALUES (?,?, ?, ?)');
+    $dados = $pdo->prepare('INSERT INTO jogos (nome, estilo, capa, lancamento) VALUES (?,?, ?,?)');
     $dados->bindParam(1, $nome);
     $dados->bindParam(2, $estilo);
     $dados->bindParam(3, $capa);
